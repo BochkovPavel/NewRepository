@@ -5,12 +5,12 @@ public class Main {
 
     public static void main(String[] args) throws IllegalAccessException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите выражение, например: 8 + 1 или для завершения программы введите \"exit\".");
+        System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ, Г­Г ГЇГ°ГЁГ¬ГҐГ°: 8 + 1 ГЁГ«ГЁ Г¤Г«Гї Г§Г ГўГҐГ°ГёГҐГ­ГЁГї ГЇГ°Г®ГЈГ°Г Г¬Г¬Г» ГўГўГҐГ¤ГЁГІГҐ \"exit\".");
         String str = "";
 
         do {
             str = scanner.nextLine();
-            if (Pattern.matches("(\\d+\\s+(\\+|-|\\*|/)\\s+\\d+)|exit", str)){
+            if (Pattern.matches("(([1-9]|[10]{2})\\s+(\\+|-|\\*|/)\\s+([1-9]|[10]{2}))|exit", str)){
                 String[] strings = str.split("\\s+");
                 if (strings.length < 3) continue;
                 switch (strings[1]){
@@ -28,11 +28,11 @@ public class Main {
                         break;
                 }
             }else{
-                throw  new IllegalAccessException("Не корректно введено выражение! Вводите выражение в формате:  число " +
-                        "- пробел - символ действия (+, -, *, /) - пробел - число. Например : 8 + 1.");
+                throw  new IllegalAccessException("ГЌГҐ ГЄГ®Г°Г°ГҐГЄГІГ­Г® ГўГўГҐГ¤ГҐГ­Г® ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ! Г‚ГўГ®Г¤ГЁГІГҐ ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ Гў ГґГ®Г°Г¬Г ГІГҐ:  Г·ГЁГ±Г«Г® " +
+                        "- ГЇГ°Г®ГЎГҐГ« - Г±ГЁГ¬ГўГ®Г« Г¤ГҐГ©Г±ГІГўГЁГї (+, -, *, /) - ГЇГ°Г®ГЎГҐГ« - Г·ГЁГ±Г«Г®. ГЌГ ГЇГ°ГЁГ¬ГҐГ° : 8 + 1.");
             }
         } while (!str.equals("exit"));
-        System.out.println("До скорых встречь!");
+        System.out.println("Г„Г® Г±ГЄГ®Г°Г»Гµ ГўГ±ГІГ°ГҐГ·Гј!");
         scanner.close();
     }
 }
