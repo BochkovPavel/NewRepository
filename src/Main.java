@@ -10,7 +10,7 @@ public class Main {
 
         do {
             str = scanner.nextLine();
-            if (Pattern.matches("(([1-9]|[10]{2})\\s+(\\+|-|\\*|/)\\s+([1-9]|[10]{2}))|exit", str)){
+            if (Pattern.matches("(([1-9]|(10?))\s+(\+|-|\*|/)\s+([1-9]|(10?)))|exit", str)){
                 String[] strings = str.split("\\s+");
                 if (strings.length < 3) continue;
                 switch (strings[1]){
