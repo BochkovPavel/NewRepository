@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) throws IllegalAccessException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите выражение, например: 8 + 1. Или для выхода введите: \"exit\".");
+        System.out.println("Р’РІРµРґРёС‚Рµ РІС‹СЂР°Р¶РµРЅРёРµ, РЅР°РїСЂРёРјРµСЂ: 8 + 1. РР»Рё РґР»СЏ РІС‹С…РѕРґР° РІРІРµРґРёС‚Рµ: \"exit\".");
         String str;
 
         do {
@@ -20,10 +20,10 @@ public class Main {
                     case ("/") -> System.out.println(Integer.parseInt(strings[0]) / Integer.parseInt(strings[2]));
                 }
             }else{
-                throw  new IllegalAccessException("Не корректно введено выражение!" );
+                throw  new IllegalAccessException("РќРµ РєРѕСЂСЂРµРєС‚РЅРѕ РІРІРµРґРµРЅРѕ РІС‹СЂР°Р¶РµРЅРёРµ!" );
             }
         } while (!str.equals("exit"));
-        System.out.println("До скорых встреч!");
+        System.out.println("Р”Рѕ СЃРєРѕСЂС‹С… РІСЃС‚СЂРµС‡!");
         scanner.close();
     }
 }
