@@ -5,34 +5,25 @@ public class Main {
 
     public static void main(String[] args) throws IllegalAccessException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ, Г­Г ГЇГ°ГЁГ¬ГҐГ°: 8 + 1 ГЁГ«ГЁ Г¤Г«Гї Г§Г ГўГҐГ°ГёГҐГ­ГЁГї ГЇГ°Г®ГЈГ°Г Г¬Г¬Г» ГўГўГҐГ¤ГЁГІГҐ \"exit\".");
-        String str = "";
+        System.out.println("Введите выражение, например: 8 + 1. Или для выхода введите: \"exit\".");
+        String str;
 
         do {
             str = scanner.nextLine();
-            if (Pattern.matches("(([1-9]|(10?))\\s+(\\+|-|\\*|/)\\s+([1-9]|(10?)))|exit", str)){
+            if (Pattern.matches("(([1-9]|(10?))\\s+([+\\-*/])\\s+([1-9]|(10?)))|exit", str)){
                 String[] strings = str.split("\\s+");
                 if (strings.length < 3) continue;
-                switch (strings[1]){
-                    case("+"):
-                        System.out.println(Integer.parseInt(strings[0]) + Integer.parseInt(strings[2]));
-                        break;
-                    case("-"):
-                        System.out.println(Integer.parseInt(strings[0]) - Integer.parseInt(strings[2]));
-                        break;
-                    case("*"):
-                        System.out.println(Integer.parseInt(strings[0]) * Integer.parseInt(strings[2]));
-                        break;
-                    case("/"):
-                        System.out.println(Integer.parseInt(strings[0]) / Integer.parseInt(strings[2]));
-                        break;
+                switch (strings[1]) {
+                    case ("+") -> System.out.println(Integer.parseInt(strings[0]) + Integer.parseInt(strings[2]));
+                    case ("-") -> System.out.println(Integer.parseInt(strings[0]) - Integer.parseInt(strings[2]));
+                    case ("*") -> System.out.println(Integer.parseInt(strings[0]) * Integer.parseInt(strings[2]));
+                    case ("/") -> System.out.println(Integer.parseInt(strings[0]) / Integer.parseInt(strings[2]));
                 }
             }else{
-                throw  new IllegalAccessException("ГЌГҐ ГЄГ®Г°Г°ГҐГЄГІГ­Г® ГўГўГҐГ¤ГҐГ­Г® ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ! Г‚ГўГ®Г¤ГЁГІГҐ ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ Гў ГґГ®Г°Г¬Г ГІГҐ:  Г·ГЁГ±Г«Г® " +
-                        "- ГЇГ°Г®ГЎГҐГ« - Г±ГЁГ¬ГўГ®Г« Г¤ГҐГ©Г±ГІГўГЁГї (+, -, *, /) - ГЇГ°Г®ГЎГҐГ« - Г·ГЁГ±Г«Г®. ГЌГ ГЇГ°ГЁГ¬ГҐГ° : 8 + 1.");
+                throw  new IllegalAccessException("Не корректно введено выражение!" );
             }
         } while (!str.equals("exit"));
-        System.out.println("Г„Г® Г±ГЄГ®Г°Г»Гµ ГўГ±ГІГ°ГҐГ·Гј!");
+        System.out.println("До скорых встреч!");
         scanner.close();
     }
 }
